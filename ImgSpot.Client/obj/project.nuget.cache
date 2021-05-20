@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "PG+grLUMSx0rW6L7d6ey2g0p0JIkD1eePnVrl2+vf6mrfmxuC7RWQF+FSQSeXcaJns2mOBne6lOWEocAi+duHw==",
+  "success": true,
+  "projectFilePath": "/home/chris/revature/ImgSpot/ImgSpot.Client/ImgSpot.Client.csproj",
+  "expectedPackageFiles": [
+    "/home/chris/.nuget/packages/microsoft.extensions.apidescription.server/3.0.0/microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "/home/chris/.nuget/packages/microsoft.openapi/1.2.3/microsoft.openapi.1.2.3.nupkg.sha512",
+    "/home/chris/.nuget/packages/swashbuckle.aspnetcore/5.6.3/swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
+    "/home/chris/.nuget/packages/swashbuckle.aspnetcore.swagger/5.6.3/swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",
+    "/home/chris/.nuget/packages/swashbuckle.aspnetcore.swaggergen/5.6.3/swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512",
+    "/home/chris/.nuget/packages/swashbuckle.aspnetcore.swaggerui/5.6.3/swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512"
+  ],
+  "logs": []
+}
