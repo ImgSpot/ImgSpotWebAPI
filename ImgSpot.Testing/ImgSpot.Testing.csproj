@@ -19,4 +19,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ImgSpot.Domain\ImgSpot.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

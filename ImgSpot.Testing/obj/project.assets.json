@@ -1648,6 +1648,16 @@
         "build": {
           "build/netcoreapp2.1/xunit.runner.visualstudio.props": {}
         }
+      },
+      "ImgSpot.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/ImgSpot.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ImgSpot.Domain.dll": {}
+        }
       }
     }
   },
@@ -5611,10 +5621,16 @@
         "xunit.runner.visualstudio.2.4.3.nupkg.sha512",
         "xunit.runner.visualstudio.nuspec"
       ]
+    },
+    "ImgSpot.Domain/1.0.0": {
+      "type": "project",
+      "path": "../ImgSpot.Domain/ImgSpot.Domain.csproj",
+      "msbuildProject": "../ImgSpot.Domain/ImgSpot.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
+      "ImgSpot.Domain >= 1.0.0",
       "Microsoft.NET.Test.Sdk >= 16.7.1",
       "coverlet.collector >= 1.3.0",
       "xunit >= 2.4.1",
@@ -5645,7 +5661,11 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "/home/chris/revature/ImgSpot/ImgSpot.Domain/ImgSpot.Domain.csproj": {
+              "projectPath": "/home/chris/revature/ImgSpot/ImgSpot.Domain/ImgSpot.Domain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
