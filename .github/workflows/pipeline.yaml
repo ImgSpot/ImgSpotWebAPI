@@ -1,4 +1,4 @@
-name: ci-pipeline
+name: pipeline
 
 jobs:
     build: 

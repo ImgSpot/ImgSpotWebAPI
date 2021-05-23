@@ -12,9 +12,14 @@ namespace ImgSpot.Client.Controllers
   public class UploadController : ControllerBase
   {
     [HttpGet]
-    public IAsyncResult Get()
+    public IActionResult Get()
     {
-      Console.Log("picture uploaded");
+      var Upload = new List<string>
+      {
+        "uploaded result:"
+        ,"true"
+      };
+      return Ok(Upload);
     }
   }
 }
