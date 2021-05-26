@@ -24,7 +24,12 @@ namespace ImgSpot.Storage
     }
     protected void OnDataSeeding(ModelBuilder builder)
     {
-      //if I wanted to see the data
+      //if I wanted to seed the data
+      builder.Entity<User>().HasData(new User[]
+      {
+        new User() { EntityId = 1, Username = "Testuser1", Firstname = "Jon", Lastname = "Doe"}
+      });
+
     }
   }
 }
