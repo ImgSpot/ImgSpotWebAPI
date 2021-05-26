@@ -6,7 +6,7 @@ using ImgSpot.Domain.Interfaces;
 
 namespace ImgSpot.Storage.Repositories
 {
-  public class CustomerRepository : IRepository<User>
+  public class UserRepository : IRepository<User>
   {
     private readonly ImgSpotContext _context;
     public UserRepository(ImgSpotContext context)
