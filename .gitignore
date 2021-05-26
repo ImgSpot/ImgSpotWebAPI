@@ -447,5 +447,8 @@ $RECYCLE.BIN/
 !.vscode/launch.json
 !.vscode/extensions.json
 
+# Angular demo
+/angular/
+
 # TRX report
 *.trx
