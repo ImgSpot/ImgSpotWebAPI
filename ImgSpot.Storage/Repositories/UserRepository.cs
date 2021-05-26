@@ -29,20 +29,5 @@ namespace ImgSpot.Storage.Repositories
     {
       throw new System.NotImplementedException();
     }
-
-    public IEnumerable<User> Create(Func<User, bool> filter)
-    {
-      throw new NotImplementedException();
-    }
-
-    public bool Update(User entry)
-    {
-      throw new NotImplementedException();
-    }
-
-    public User Read()
-    {
-      throw new NotImplementedException();
-    }
   }
 }
