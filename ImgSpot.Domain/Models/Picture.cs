@@ -10,6 +10,6 @@ namespace ImgSpot.Domain.Models
     public string Username { get; set; } //of uploader
     public string Title { get; set; }
     public string Description { get; set; }
-    public List<Comment> Comments { get; set; }
+
   }
 }
