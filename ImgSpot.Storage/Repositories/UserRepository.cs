@@ -19,7 +19,8 @@ namespace ImgSpot.Storage.Repositories
     }
     public bool Insert(User entry)
     {
-      throw new System.NotImplementedException();
+      _context.Users.Add(entry);
+      return true;
     }
     public User Update()
     {

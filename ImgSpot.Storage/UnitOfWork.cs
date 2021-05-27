@@ -5,7 +5,7 @@ namespace ImgSpot.Storage
   public class UnitOfWork
   {
     private readonly ImgSpotContext _context;
-    public UserRepository Users { get; }
+    public UserRepository Users { get; set; }
     public PictureRepository Pictures { get; set; }
     public CommentRepository Comments { get; set; }
     public LikeRepository Likes { get; set; }

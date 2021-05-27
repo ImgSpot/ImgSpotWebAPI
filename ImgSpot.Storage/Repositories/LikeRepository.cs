@@ -19,7 +19,8 @@ namespace ImgSpot.Storage.Repositories
     }
     public bool Insert(Like entry)
     {
-      throw new System.NotImplementedException();
+      _context.Likes.Add(entry);
+      return true;
     }
     public Like Update()
     {
