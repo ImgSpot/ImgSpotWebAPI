@@ -1,13 +1,14 @@
 using System.Text.Json;
 using ImgSpot.Client.Models;
 using ImgSpot.Storage;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ImgSpot.Client.Controllers
 {
   [ApiController]
-  [Route("[controller]")]
-
+  [Route("[controller]/post")]
+  [EnableCors("public")]
   public class PostController : ControllerBase
   {
     public readonly UnitOfWork _unitOfWork;
@@ -16,7 +17,7 @@ namespace ImgSpot.Client.Controllers
       _unitOfWork = unitOfWork;
     }
     [HttpGet]
-    [ValidateAntiForgeryToken]
+    //[ValidateAntiForgeryToken]
     public IActionResult Get()
     {
       //return likes, comments, pictures
@@ -26,11 +27,17 @@ namespace ImgSpot.Client.Controllers
       //serialize into json string
       //return Ok( serialized json string );
       return Ok(jsonString);
-
     }
 
-    /*     [HttpPost]
-        [ValidateAntiForgeryToken] */
-
+    [HttpPost]
+    //[ValidateAntiForgeryToken]
+    public IActionResult Post(string jsonString)
+    {
+      var post = new PostModel();
+      post = JsonSerializer.Deserialize<PostModel>(jsonString);
+      post.Load(_unitOfWork);
+      _unitOfWork.Save();
+      return Ok(post);
+    }
   }
 }

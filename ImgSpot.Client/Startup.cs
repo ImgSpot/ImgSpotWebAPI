@@ -44,6 +44,15 @@ namespace ImgSpot.Client
               });
             }
           });
+      services.AddCors(options =>
+     {
+       options.AddPolicy("public", config =>
+       {
+         config.AllowAnyHeader();
+         config.AllowAnyMethod();
+         config.AllowAnyOrigin();
+       });
+     });
     }
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -64,6 +73,8 @@ namespace ImgSpot.Client
       app.UseRouting();
 
       app.UseAuthorization();
+
+      app.UseCors();
 
       app.UseEndpoints(endpoints =>
       {
