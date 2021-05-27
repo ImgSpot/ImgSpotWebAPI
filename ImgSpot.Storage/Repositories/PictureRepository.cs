@@ -19,7 +19,8 @@ namespace ImgSpot.Storage.Repositories
     }
     public bool Insert(Picture entry)
     {
-      throw new System.NotImplementedException();
+      _context.Pictures.Add(entry);
+      return true;
     }
     public Picture Update()
     {
