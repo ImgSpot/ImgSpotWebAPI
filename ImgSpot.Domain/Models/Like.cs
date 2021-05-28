@@ -8,7 +8,7 @@ namespace ImgSpot.Domain.Models
     public Picture Picture { get; set; }
     public long PictureEntityId { get; set; } // references the picture
     public User User { get; set; }// references the Username
-    public long UserEntityId { get; set; }
+    //public long UserEntityId { get; set; }
 
   }
 }
