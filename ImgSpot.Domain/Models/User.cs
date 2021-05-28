@@ -10,6 +10,6 @@ namespace ImgSpot.Domain.Models
     public string Lastname { get; set; }
     public List<Picture> Pictures { get; set; }
     public List<Comment> Comments { get; set; }
-    //public List<Like> Likes { get; set; }
+    public List<Like> Likes { get; set; }
   }
 }
