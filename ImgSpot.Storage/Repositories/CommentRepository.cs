@@ -19,7 +19,8 @@ namespace ImgSpot.Storage.Repositories
     }
     public bool Insert(Comment entry)
     {
-      throw new System.NotImplementedException();
+      _context.Comments.Add(entry);
+      return true;
     }
     public Comment Update()
     {

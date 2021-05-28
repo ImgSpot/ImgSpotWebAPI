@@ -21,6 +21,8 @@ namespace ImgSpot.Storage
       builder.Entity<Comment>().HasKey(e => e.EntityId);
       builder.Entity<Picture>().HasKey(e => e.EntityId);
       OnDataSeeding(builder);
+
+
     }
     protected void OnDataSeeding(ModelBuilder builder)
     {

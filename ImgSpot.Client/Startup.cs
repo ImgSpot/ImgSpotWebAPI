@@ -13,6 +13,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using Newtonsoft.Json;
 
 namespace ImgSpot.Client
 {
@@ -29,7 +30,8 @@ namespace ImgSpot.Client
     public void ConfigureServices(IServiceCollection services)
     {
 
-      services.AddControllers();
+      //services.AddControllers();
+      services.AddControllers().AddNewtonsoftJson();
       services.AddScoped<UnitOfWork>();
       services.AddSwaggerGen(c =>
       {

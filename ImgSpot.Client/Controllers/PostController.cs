@@ -1,6 +1,9 @@
+using System;
 using System.Linq;
+using System.Threading.Tasks;
 //using System.Text.Json;
 using ImgSpot.Client.Models;
+using ImgSpot.Domain.Models;
 using ImgSpot.Storage;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
@@ -18,9 +21,6 @@ namespace ImgSpot.Client.Controllers
     {
       _unitOfWork = unitOfWork;
     }
-
-
-
     [HttpGet]
     //[ValidateAntiForgeryToken]
     public IActionResult Get()
@@ -37,33 +37,52 @@ namespace ImgSpot.Client.Controllers
       //serialize into json string
       //return Ok( serialized json string );
       return Ok(jsonString);
-
     }
     [HttpPost]
     //[ValidateAntiForgeryToken]
-    public IActionResult Post(string jsonString)
+    public IActionResult Post(PostModel jsonString)
     {
-      var settings = new JsonSerializerSettings
+      if (ModelState.IsValid)
       {
-        NullValueHandling = NullValueHandling.Ignore,
-        MissingMemberHandling = MissingMemberHandling.Ignore
-      };
-      var post = new PostModel();
-      post = JsonConvert.DeserializeObject<PostModel>(jsonString, settings);
-      //post.Load(_unitOfWork);
-      /*
-     var user = _unitOfWork.Users.Select(c => c.Username == post.SelectedUser).First();
-     var picture = _unitOfWork.Pictures.Select(c => (c.Username == post.SelectedPicture) && (c.Filename == post.SelectedPicture)).First();
-     var comment = _unitOfWork.Comments.Select(c => (c.Username == post.SelectedComment) && (c.Filename == post.SelectedComment)).First();
 
-     _unitOfWork.Users.Insert(user);
-     _unitOfWork.Pictures.Insert(picture);
-     _unitOfWork.Comments.Insert(comment); */
+        var settings = new JsonSerializerSettings
+        {
+          NullValueHandling = NullValueHandling.Ignore,
+          MissingMemberHandling = MissingMemberHandling.Ignore
+        };
+        var post = new PostModel()
+        {
+          SelectedUser = jsonString.SelectedUser,
+          SelectedComment = jsonString.SelectedComment,
+          SelectedPicture = jsonString.SelectedPicture
+        };
+        //post = JsonConvert.DeserializeObject<PostModel>(jsonString, settings);
+        //post.Load(_unitOfWork);
 
-      _unitOfWork.Save();
-      return Ok(post);
+        var user = _unitOfWork.Users.Select(c => c.Username == post.SelectedUser).FirstOrDefault();
+        var picture = _unitOfWork.Pictures.Select(c => (c.Filename == post.SelectedPicture)).FirstOrDefault();
+        var comment = _unitOfWork.Comments.Select(c => (c.Body == post.SelectedComment)).FirstOrDefault();
+        if (user == null)
+        {
+          var newUser = new User();
+          newUser.Username = post.SelectedUser;
+          _unitOfWork.Users.Insert(newUser);
+        }
+        if (picture == null)
+        {
+          var newPic = new Picture();
+          newPic.Filename = post.SelectedPicture;
+          _unitOfWork.Pictures.Insert(newPic);
+        }
+        if (comment == null)
+        {
+          var newComment = new Comment();
+          newComment.Body = post.SelectedComment;
+          _unitOfWork.Comments.Insert(newComment);
+        }
+        _unitOfWork.Save();
+      }
+      return Ok();
     }
-
-
   }
 }
