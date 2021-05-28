@@ -62,23 +62,17 @@ namespace ImgSpot.Client.Controllers
         var user = _unitOfWork.Users.Select(c => c.Username == post.SelectedUser).FirstOrDefault();
         var picture = _unitOfWork.Pictures.Select(c => (c.Filename == post.SelectedPicture)).FirstOrDefault();
         var comment = _unitOfWork.Comments.Select(c => (c.Body == post.SelectedComment)).FirstOrDefault();
-        if (user == null)
+        if (user == null && picture == null)
         {
           var newUser = new User();
           newUser.Username = post.SelectedUser;
-          _unitOfWork.Users.Insert(newUser);
-        }
-        if (picture == null)
-        {
+          _unitOfWork.Users.Insert(newUser);//creates a new user if non exists 
+
           var newPic = new Picture();
           newPic.Filename = post.SelectedPicture;
+          newPic.User = newUser;
           _unitOfWork.Pictures.Insert(newPic);
-        }
-        if (comment == null)
-        {
-          var newComment = new Comment();
-          newComment.Body = post.SelectedComment;
-          _unitOfWork.Comments.Insert(newComment);
+          //inserts a new picture with the new user
         }
         _unitOfWork.Save();
       }

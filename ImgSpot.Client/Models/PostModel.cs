@@ -27,7 +27,7 @@ namespace ImgSpot.Client.Models
     public void Load(UnitOfWork unitOfWork)
     {
       Users = unitOfWork.Users.Select(u => !string.IsNullOrWhiteSpace(u.Username)).ToList();
-      Likes = unitOfWork.Likes.Select(u => !string.IsNullOrWhiteSpace(u.)).ToList();
+      //Likes = unitOfWork.Likes.Select(u => !string.IsNullOrWhiteSpace(u.)).ToList();
       Comments = unitOfWork.Comments.Select(u => !string.IsNullOrWhiteSpace(u.Body)).ToList();
       Pictures = unitOfWork.Pictures.Select(u => !string.IsNullOrWhiteSpace(u.Filename)).ToList();
     }
