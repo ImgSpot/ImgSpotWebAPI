@@ -1,10 +1,18 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "OaeJgNRS6+VSz1dUNFetVOdAlqk02yzJed/R15DGLu4YeORChU2s53k5cCMpAkzj9BEroL1P+T4r3xDz+9X/CA==",
   "success": true,
   "projectFilePath": "/home/njdiemer/revature/ImgSpotWebAPI/ImgSpot.Testing/ImgSpot.Testing.csproj",
   "expectedPackageFiles": [
     "/home/njdiemer/.nuget/packages/coverlet.collector/1.3.0/coverlet.collector.1.3.0.nupkg.sha512",
+=======
+  "dgSpecHash": "B7C2sfngjWwmrqb6zoChNn1Ie5ZjrF26UQG38orwdgHsZb/kxDTEmkklXzaNgnEskChcWHr6d6mzSxseBlekQQ==",
+  "success": true,
+  "projectFilePath": "/home/njdiemer/revature/ImgSpotWebAPI/ImgSpot.Testing/ImgSpot.Testing.csproj",
+  "expectedPackageFiles": [
+    "/home/njdiemer/.nuget/packages/coverlet.collector/3.0.3/coverlet.collector.3.0.3.nupkg.sha512",
+>>>>>>> testing_branch
     "/home/njdiemer/.nuget/packages/microsoft.codecoverage/16.7.1/microsoft.codecoverage.16.7.1.nupkg.sha512",
     "/home/njdiemer/.nuget/packages/microsoft.csharp/4.0.1/microsoft.csharp.4.0.1.nupkg.sha512",
     "/home/njdiemer/.nuget/packages/microsoft.net.test.sdk/16.7.1/microsoft.net.test.sdk.16.7.1.nupkg.sha512",

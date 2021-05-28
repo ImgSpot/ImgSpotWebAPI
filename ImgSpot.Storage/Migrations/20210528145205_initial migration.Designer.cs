@@ -9,181 +9,179 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ImgSpot.Storage.Migrations
 {
-    [DbContext(typeof(ImgSpotContext))]
-    [Migration("20210528145205_initial migration")]
-    partial class initialmigration
+  [DbContext(typeof(ImgSpotContext))]
+  [Migration("20210528145205_initial migration")]
+  partial class initialmigration
+  {
+    protected override void BuildTargetModel(ModelBuilder modelBuilder)
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
-        {
-#pragma warning disable 612, 618
-            modelBuilder
-                .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("ProductVersion", "5.0.6")
-                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+      modelBuilder
+          .HasAnnotation("Relational:MaxIdentifierLength", 128)
+          .HasAnnotation("ProductVersion", "5.0.6")
+          .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("ImgSpot.Domain.Models.Comment", b =>
-                {
-                    b.Property<long>("EntityId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+      modelBuilder.Entity("ImgSpot.Domain.Models.Comment", b =>
+          {
+            b.Property<long>("EntityId")
+                      .ValueGeneratedOnAdd()
+                      .HasColumnType("bigint")
+                      .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Body")
-                        .HasColumnType("nvarchar(max)");
+            b.Property<string>("Body")
+                      .HasColumnType("nvarchar(max)");
 
-                    b.Property<long>("PictureEntityId")
-                        .HasColumnType("bigint");
+            b.Property<long>("PictureEntityId")
+                      .HasColumnType("bigint");
 
-                    b.Property<long?>("UserEntityId")
-                        .HasColumnType("bigint");
+            b.Property<long?>("UserEntityId")
+                      .HasColumnType("bigint");
 
-                    b.HasKey("EntityId");
+            b.HasKey("EntityId");
 
-                    b.HasIndex("PictureEntityId");
+            b.HasIndex("PictureEntityId");
 
-                    b.HasIndex("UserEntityId");
+            b.HasIndex("UserEntityId");
 
-                    b.ToTable("Comments");
-                });
+            b.ToTable("Comments");
+          });
 
-            modelBuilder.Entity("ImgSpot.Domain.Models.Like", b =>
-                {
-                    b.Property<long>("EntityId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+      modelBuilder.Entity("ImgSpot.Domain.Models.Like", b =>
+          {
+            b.Property<long>("EntityId")
+                      .ValueGeneratedOnAdd()
+                      .HasColumnType("bigint")
+                      .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<long>("PictureEntityId")
-                        .HasColumnType("bigint");
+            b.Property<long>("PictureEntityId")
+                      .HasColumnType("bigint");
 
-                    b.Property<long?>("UserEntityId")
-                        .HasColumnType("bigint");
+            b.Property<long?>("UserEntityId")
+                      .HasColumnType("bigint");
 
-                    b.HasKey("EntityId");
+            b.HasKey("EntityId");
 
-                    b.HasIndex("PictureEntityId");
+            b.HasIndex("PictureEntityId");
 
-                    b.HasIndex("UserEntityId");
+            b.HasIndex("UserEntityId");
 
-                    b.ToTable("Likes");
-                });
+            b.ToTable("Likes");
+          });
 
-            modelBuilder.Entity("ImgSpot.Domain.Models.Picture", b =>
-                {
-                    b.Property<long>("EntityId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+      modelBuilder.Entity("ImgSpot.Domain.Models.Picture", b =>
+          {
+            b.Property<long>("EntityId")
+                      .ValueGeneratedOnAdd()
+                      .HasColumnType("bigint")
+                      .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("CountLikes")
-                        .HasColumnType("int");
+            b.Property<int>("CountLikes")
+                      .HasColumnType("int");
 
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
+            b.Property<string>("Description")
+                      .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Filename")
-                        .HasColumnType("nvarchar(max)");
+            b.Property<string>("Filename")
+                      .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Title")
-                        .HasColumnType("nvarchar(max)");
+            b.Property<string>("Title")
+                      .HasColumnType("nvarchar(max)");
 
-                    b.Property<long?>("UserEntityId")
-                        .HasColumnType("bigint");
+            b.Property<long?>("UserEntityId")
+                      .HasColumnType("bigint");
 
-                    b.HasKey("EntityId");
+            b.HasKey("EntityId");
 
-                    b.HasIndex("UserEntityId");
+            b.HasIndex("UserEntityId");
 
-                    b.ToTable("Pictures");
-                });
+            b.ToTable("Pictures");
+          });
 
-            modelBuilder.Entity("ImgSpot.Domain.Models.User", b =>
-                {
-                    b.Property<long>("EntityId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+      modelBuilder.Entity("ImgSpot.Domain.Models.User", b =>
+          {
+            b.Property<long>("EntityId")
+                      .ValueGeneratedOnAdd()
+                      .HasColumnType("bigint")
+                      .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Firstname")
-                        .HasColumnType("nvarchar(max)");
+            b.Property<string>("Firstname")
+                      .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Lastname")
-                        .HasColumnType("nvarchar(max)");
+            b.Property<string>("Lastname")
+                      .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Username")
-                        .HasColumnType("nvarchar(max)");
+            b.Property<string>("Username")
+                      .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("EntityId");
+            b.HasKey("EntityId");
 
-                    b.ToTable("Users");
+            b.ToTable("Users");
 
-                    b.HasData(
-                        new
-                        {
-                            EntityId = 1L,
-                            Firstname = "Jon",
-                            Lastname = "Doe",
-                            Username = "Testuser1"
-                        });
-                });
+            b.HasData(
+                      new
+                  {
+                    EntityId = 1L,
+                    Firstname = "Jon",
+                    Lastname = "Doe",
+                    Username = "Testuser1"
+                  });
+          });
 
-            modelBuilder.Entity("ImgSpot.Domain.Models.Comment", b =>
-                {
-                    b.HasOne("ImgSpot.Domain.Models.Picture", "Pictures")
-                        .WithMany("Comments")
-                        .HasForeignKey("PictureEntityId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+      modelBuilder.Entity("ImgSpot.Domain.Models.Comment", b =>
+          {
+            b.HasOne("ImgSpot.Domain.Models.Picture", "Pictures")
+                      .WithMany("Comments")
+                      .HasForeignKey("PictureEntityId")
+                      .OnDelete(DeleteBehavior.Cascade)
+                      .IsRequired();
 
-                    b.HasOne("ImgSpot.Domain.Models.User", "User")
-                        .WithMany("Comments")
-                        .HasForeignKey("UserEntityId");
+            b.HasOne("ImgSpot.Domain.Models.User", "User")
+                      .WithMany("Comments")
+                      .HasForeignKey("UserEntityId");
 
-                    b.Navigation("Pictures");
+            b.Navigation("Pictures");
 
-                    b.Navigation("User");
-                });
+            b.Navigation("User");
+          });
 
-            modelBuilder.Entity("ImgSpot.Domain.Models.Like", b =>
-                {
-                    b.HasOne("ImgSpot.Domain.Models.Picture", "Picture")
-                        .WithMany()
-                        .HasForeignKey("PictureEntityId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+      modelBuilder.Entity("ImgSpot.Domain.Models.Like", b =>
+          {
+            b.HasOne("ImgSpot.Domain.Models.Picture", "Picture")
+                      .WithMany()
+                      .HasForeignKey("PictureEntityId")
+                      .OnDelete(DeleteBehavior.Cascade)
+                      .IsRequired();
 
-                    b.HasOne("ImgSpot.Domain.Models.User", "User")
-                        .WithMany("Likes")
-                        .HasForeignKey("UserEntityId");
+            b.HasOne("ImgSpot.Domain.Models.User", "User")
+                      .WithMany("Likes")
+                      .HasForeignKey("UserEntityId");
 
-                    b.Navigation("Picture");
+            b.Navigation("Picture");
 
-                    b.Navigation("User");
-                });
+            b.Navigation("User");
+          });
 
-            modelBuilder.Entity("ImgSpot.Domain.Models.Picture", b =>
-                {
-                    b.HasOne("ImgSpot.Domain.Models.User", "User")
-                        .WithMany("Pictures")
-                        .HasForeignKey("UserEntityId");
+      modelBuilder.Entity("ImgSpot.Domain.Models.Picture", b =>
+          {
+            b.HasOne("ImgSpot.Domain.Models.User", "User")
+                      .WithMany("Pictures")
+                      .HasForeignKey("UserEntityId");
 
-                    b.Navigation("User");
-                });
+            b.Navigation("User");
+          });
 
-            modelBuilder.Entity("ImgSpot.Domain.Models.Picture", b =>
-                {
-                    b.Navigation("Comments");
-                });
+      modelBuilder.Entity("ImgSpot.Domain.Models.Picture", b =>
+          {
+            b.Navigation("Comments");
+          });
 
-            modelBuilder.Entity("ImgSpot.Domain.Models.User", b =>
-                {
-                    b.Navigation("Comments");
+      modelBuilder.Entity("ImgSpot.Domain.Models.User", b =>
+          {
+            b.Navigation("Comments");
 
-                    b.Navigation("Likes");
+            b.Navigation("Likes");
 
-                    b.Navigation("Pictures");
-                });
-#pragma warning restore 612, 618
-        }
+            b.Navigation("Pictures");
+          });
     }
+  }
 }
