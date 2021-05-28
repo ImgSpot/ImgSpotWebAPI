@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     "net5.0": {
-      "coverlet.collector/1.3.0": {
+      "coverlet.collector/3.0.3": {
         "type": "package",
         "build": {
           "build/netstandard1.0/coverlet.collector.targets": {}
@@ -1662,13 +1662,14 @@
     }
   },
   "libraries": {
-    "coverlet.collector/1.3.0": {
-      "sha512": "t8pnf5SX2ya0RX4vjoxsbhDMQCZJcpPun2neHKJ4FouMmObylo25FvoOydvf3Bl+l+IzWw7u2vjEeCBHnleB9g==",
+    "coverlet.collector/3.0.3": {
+      "sha512": "PdyhdzG2LK7YUEtccObPql+3OuFODaFNeYayxdPoK1eHb2StZoeQf1WMb16QrKiIdi4fs5Kog8jxXtlZOgAEuA==",
       "type": "package",
-      "path": "coverlet.collector/1.3.0",
+      "path": "coverlet.collector/3.0.3",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
+        "build/netstandard1.0/Microsoft.CSharp.dll",
         "build/netstandard1.0/Microsoft.DotNet.PlatformAbstractions.dll",
         "build/netstandard1.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
         "build/netstandard1.0/Microsoft.Extensions.DependencyInjection.dll",
@@ -1683,6 +1684,24 @@
         "build/netstandard1.0/Mono.Cecil.dll",
         "build/netstandard1.0/Newtonsoft.Json.dll",
         "build/netstandard1.0/NuGet.Frameworks.dll",
+        "build/netstandard1.0/System.AppContext.dll",
+        "build/netstandard1.0/System.Collections.Immutable.dll",
+        "build/netstandard1.0/System.Dynamic.Runtime.dll",
+        "build/netstandard1.0/System.IO.FileSystem.Primitives.dll",
+        "build/netstandard1.0/System.Linq.Expressions.dll",
+        "build/netstandard1.0/System.Linq.dll",
+        "build/netstandard1.0/System.ObjectModel.dll",
+        "build/netstandard1.0/System.Reflection.Emit.ILGeneration.dll",
+        "build/netstandard1.0/System.Reflection.Emit.Lightweight.dll",
+        "build/netstandard1.0/System.Reflection.Emit.dll",
+        "build/netstandard1.0/System.Reflection.Metadata.dll",
+        "build/netstandard1.0/System.Reflection.TypeExtensions.dll",
+        "build/netstandard1.0/System.Runtime.Serialization.Primitives.dll",
+        "build/netstandard1.0/System.Text.RegularExpressions.dll",
+        "build/netstandard1.0/System.Threading.Tasks.Extensions.dll",
+        "build/netstandard1.0/System.Threading.dll",
+        "build/netstandard1.0/System.Xml.ReaderWriter.dll",
+        "build/netstandard1.0/System.Xml.XDocument.dll",
         "build/netstandard1.0/coverlet.collector.deps.json",
         "build/netstandard1.0/coverlet.collector.dll",
         "build/netstandard1.0/coverlet.collector.pdb",
@@ -1690,7 +1709,7 @@
         "build/netstandard1.0/coverlet.core.dll",
         "build/netstandard1.0/coverlet.core.pdb",
         "coverlet-icon.png",
-        "coverlet.collector.1.3.0.nupkg.sha512",
+        "coverlet.collector.3.0.3.nupkg.sha512",
         "coverlet.collector.nuspec"
       ]
     },
@@ -5632,25 +5651,25 @@
     "net5.0": [
       "ImgSpot.Domain >= 1.0.0",
       "Microsoft.NET.Test.Sdk >= 16.7.1",
-      "coverlet.collector >= 1.3.0",
+      "coverlet.collector >= 3.0.3",
       "xunit >= 2.4.1",
       "xunit.runner.visualstudio >= 2.4.3"
     ]
   },
   "packageFolders": {
-    "/home/chris/.nuget/packages/": {}
+    "/home/njdiemer/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/chris/revature/ImgSpot/ImgSpot.Testing/ImgSpot.Testing.csproj",
+      "projectUniqueName": "/home/njdiemer/revature/ImgSpotWebAPI/ImgSpot.Testing/ImgSpot.Testing.csproj",
       "projectName": "ImgSpot.Testing",
-      "projectPath": "/home/chris/revature/ImgSpot/ImgSpot.Testing/ImgSpot.Testing.csproj",
-      "packagesPath": "/home/chris/.nuget/packages/",
-      "outputPath": "/home/chris/revature/ImgSpot/ImgSpot.Testing/obj/",
+      "projectPath": "/home/njdiemer/revature/ImgSpotWebAPI/ImgSpot.Testing/ImgSpot.Testing.csproj",
+      "packagesPath": "/home/njdiemer/.nuget/packages/",
+      "outputPath": "/home/njdiemer/revature/ImgSpotWebAPI/ImgSpot.Testing/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/chris/.nuget/NuGet/NuGet.Config"
+        "/home/njdiemer/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -5662,8 +5681,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "/home/chris/revature/ImgSpot/ImgSpot.Domain/ImgSpot.Domain.csproj": {
-              "projectPath": "/home/chris/revature/ImgSpot/ImgSpot.Domain/ImgSpot.Domain.csproj"
+            "/home/njdiemer/revature/ImgSpotWebAPI/ImgSpot.Domain/ImgSpot.Domain.csproj": {
+              "projectPath": "/home/njdiemer/revature/ImgSpotWebAPI/ImgSpot.Domain/ImgSpot.Domain.csproj"
             }
           }
         }
@@ -5686,7 +5705,7 @@
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
             "suppressParent": "All",
             "target": "Package",
-            "version": "[1.3.0, )"
+            "version": "[3.0.3, )"
           },
           "xunit": {
             "target": "Package",
