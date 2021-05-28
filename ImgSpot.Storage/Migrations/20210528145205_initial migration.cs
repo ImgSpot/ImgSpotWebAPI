@@ -28,7 +28,7 @@ namespace ImgSpot.Storage.Migrations
                     EntityId = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Filename = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    UserEntityId = table.Column<long>(type: "bigint", nullable: false),
+                    UserEntityId = table.Column<long>(type: "bigint", nullable: true),
                     Title = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CountLikes = table.Column<int>(type: "int", nullable: false)
@@ -41,7 +41,7 @@ namespace ImgSpot.Storage.Migrations
                         column: x => x.UserEntityId,
                         principalTable: "Users",
                         principalColumn: "EntityId",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -50,7 +50,7 @@ namespace ImgSpot.Storage.Migrations
                 {
                     EntityId = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    UserEntityId = table.Column<long>(type: "bigint", nullable: false),
+                    UserEntityId = table.Column<long>(type: "bigint", nullable: true),
                     Body = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     PictureEntityId = table.Column<long>(type: "bigint", nullable: false)
                 },
@@ -68,7 +68,7 @@ namespace ImgSpot.Storage.Migrations
                         column: x => x.UserEntityId,
                         principalTable: "Users",
                         principalColumn: "EntityId",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -78,7 +78,7 @@ namespace ImgSpot.Storage.Migrations
                     EntityId = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     PictureEntityId = table.Column<long>(type: "bigint", nullable: false),
-                    UserEntityId = table.Column<long>(type: "bigint", nullable: false)
+                    UserEntityId = table.Column<long>(type: "bigint", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -94,7 +94,7 @@ namespace ImgSpot.Storage.Migrations
                         column: x => x.UserEntityId,
                         principalTable: "Users",
                         principalColumn: "EntityId",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.InsertData(

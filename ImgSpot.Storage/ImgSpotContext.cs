@@ -22,11 +22,10 @@ namespace ImgSpot.Storage
       builder.Entity<Picture>().HasKey(e => e.EntityId);
       OnDataSeeding(builder);
 
-      //builder.Entity<Picture>().HasMany<Comment>().WithOne(p => p.Pictures).OnDelete(DeleteBehavior.NoAction);
-      //builder.Entity<User>().HasMany<Comment>().WithOne(u => u.User).OnDelete(DeleteBehavior.NoAction);
-      //builder.Entity<User>().HasMany<Like>().WithOne(u => u.User).OnDelete(DeleteBehavior.NoAction);
-      //builder.Entity<User>().HasMany<Picture>().WithOne(u => u.User).OnDelete(DeleteBehavior.NoAction);
-
+      //builder.Entity<Picture>().HasMany<Comment>().WithOne().HasForeignKey(p => p.PicturesEntityId).OnDelete(DeleteBehavior.NoAction);
+      /*       builder.Entity<User>().HasMany<Comment>().WithOne(u => u.User).HasForeignKey(u => u.EntityId).OnDelete(DeleteBehavior.NoAction);
+            builder.Entity<User>().HasMany<Like>().WithOne(u => u.User).HasForeignKey(u => u.EntityId).OnDelete(DeleteBehavior.NoAction);
+            builder.Entity<User>().HasMany<Picture>().WithOne(u => u.User).HasForeignKey(u => u.EntityId).OnDelete(DeleteBehavior.NoAction); */
     }
     protected void OnDataSeeding(ModelBuilder builder)
     {
