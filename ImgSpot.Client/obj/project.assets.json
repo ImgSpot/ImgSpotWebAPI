@@ -5681,19 +5681,19 @@
     ]
   },
   "packageFolders": {
-    "/home/chris/.nuget/packages/": {}
+    "/home/njdiemer/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/chris/revature/ImgSpot/ImgSpot.Client/ImgSpot.Client.csproj",
+      "projectUniqueName": "/home/njdiemer/revature/ImgSpotWebAPI/ImgSpot.Client/ImgSpot.Client.csproj",
       "projectName": "ImgSpot.Client",
-      "projectPath": "/home/chris/revature/ImgSpot/ImgSpot.Client/ImgSpot.Client.csproj",
-      "packagesPath": "/home/chris/.nuget/packages/",
-      "outputPath": "/home/chris/revature/ImgSpot/ImgSpot.Client/obj/",
+      "projectPath": "/home/njdiemer/revature/ImgSpotWebAPI/ImgSpot.Client/ImgSpot.Client.csproj",
+      "packagesPath": "/home/njdiemer/.nuget/packages/",
+      "outputPath": "/home/njdiemer/revature/ImgSpotWebAPI/ImgSpot.Client/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/chris/.nuget/NuGet/NuGet.Config"
+        "/home/njdiemer/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -5705,11 +5705,11 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "/home/chris/revature/ImgSpot/ImgSpot.Domain/ImgSpot.Domain.csproj": {
-              "projectPath": "/home/chris/revature/ImgSpot/ImgSpot.Domain/ImgSpot.Domain.csproj"
+            "/home/njdiemer/revature/ImgSpotWebAPI/ImgSpot.Domain/ImgSpot.Domain.csproj": {
+              "projectPath": "/home/njdiemer/revature/ImgSpotWebAPI/ImgSpot.Domain/ImgSpot.Domain.csproj"
             },
-            "/home/chris/revature/ImgSpot/ImgSpot.Storage/ImgSpot.Storage.csproj": {
-              "projectPath": "/home/chris/revature/ImgSpot/ImgSpot.Storage/ImgSpot.Storage.csproj"
+            "/home/njdiemer/revature/ImgSpotWebAPI/ImgSpot.Storage/ImgSpot.Storage.csproj": {
+              "projectPath": "/home/njdiemer/revature/ImgSpotWebAPI/ImgSpot.Storage/ImgSpot.Storage.csproj"
             }
           }
         }

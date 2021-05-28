@@ -5638,19 +5638,19 @@
     ]
   },
   "packageFolders": {
-    "/home/chris/.nuget/packages/": {}
+    "/home/njdiemer/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/chris/revature/ImgSpot/ImgSpot.Testing/ImgSpot.Testing.csproj",
+      "projectUniqueName": "/home/njdiemer/revature/ImgSpotWebAPI/ImgSpot.Testing/ImgSpot.Testing.csproj",
       "projectName": "ImgSpot.Testing",
-      "projectPath": "/home/chris/revature/ImgSpot/ImgSpot.Testing/ImgSpot.Testing.csproj",
-      "packagesPath": "/home/chris/.nuget/packages/",
-      "outputPath": "/home/chris/revature/ImgSpot/ImgSpot.Testing/obj/",
+      "projectPath": "/home/njdiemer/revature/ImgSpotWebAPI/ImgSpot.Testing/ImgSpot.Testing.csproj",
+      "packagesPath": "/home/njdiemer/.nuget/packages/",
+      "outputPath": "/home/njdiemer/revature/ImgSpotWebAPI/ImgSpot.Testing/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/chris/.nuget/NuGet/NuGet.Config"
+        "/home/njdiemer/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -5662,8 +5662,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "/home/chris/revature/ImgSpot/ImgSpot.Domain/ImgSpot.Domain.csproj": {
-              "projectPath": "/home/chris/revature/ImgSpot/ImgSpot.Domain/ImgSpot.Domain.csproj"
+            "/home/njdiemer/revature/ImgSpotWebAPI/ImgSpot.Domain/ImgSpot.Domain.csproj": {
+              "projectPath": "/home/njdiemer/revature/ImgSpotWebAPI/ImgSpot.Domain/ImgSpot.Domain.csproj"
             }
           }
         }
